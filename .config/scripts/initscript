@@ -1,6 +1,7 @@
 #!/bin/sh
 EDITOR=nvim
 VISUAL=nvim
+PICO_SDK_PATH=~/Programming/pico/pico-sdk
 
 # mouse sensivity
 xsetroot -cursor_name left_ptr       

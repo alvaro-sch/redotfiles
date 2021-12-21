@@ -15,7 +15,6 @@ set undofile              " persistent undo even after you close a file and re-o
 set clipboard=unnamed     " make y copy to system clipboard (midclick)
                           " set clipboard=unammedplus for ctrl+v
 
-
 " unmap arrow keys
 noremap <Up>    <Nop>
 noremap <Down>  <Nop>
@@ -25,4 +24,7 @@ noremap <Right> <Nop>
 " unmap help
 noremap  <F1>    <Nop>
 inoremap <F1>    <Nop>
+
+" leader key
+let mapleader = ","
 
