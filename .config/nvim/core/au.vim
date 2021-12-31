@@ -5,6 +5,17 @@ au! BufRead Makefile,makefile set noexpandtab
 " auto source when writing to init.vm alternatively you can run :source $MYVIM
 au! BufWritePost $MYVIMRC source %
 
+" commenting blocks of code
+augroup commenting_blocks_of_code
+    autocmd!
+    autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
+    autocmd FileType sh,ruby,python   let b:comment_leader = '# '
+    autocmd FileType conf,fstab       let b:comment_leader = '# '
+    autocmd FileType tex              let b:comment_leader = '% '
+    autocmd FileType mail             let b:comment_leader = '> '
+    autocmd FileType vim              let b:comment_leader = '" '
+augroup end
+
 " see help completion for source,
 " note: usual completion is on <C-n> but more trouble to press all the time.
 " never type the same word twice and maybe learn a new spellings!

@@ -1,19 +1,27 @@
 syntax enable
-set title                 " show title on terminal window
-set encoding=utf-8        " set encoding to utf8
-set mouse=a               " enable mouse
-set t_Co=25	   	          " enable 256 colors
-set tabstop=4      	      " insert 4 spaces for tab
-set shiftwidth=4   	      " tab = 4 spaces
-set expandtab      	      " makes tab insert spaces
-set smartindent           " makes indent smarter
-set autoindent            " good autoindent
-set number relativenumber " show line number
-set updatetime=300 	      " faster completion
-set timeoutlen=500 	      " by default timeoutlen is 1000 ms
-set undofile              " persistent undo even after you close a file and re-open it
-set clipboard=unnamed     " make y copy to system clipboard (midclick)
+set title
+set hidden
+set encoding=utf-8
+set mouse=a
+set tabstop=4
+set shiftwidth=4
+set autoindent
+set smartindent
+set number relativenumber
+set list
+set listchars=tab:‣\ ,trail:·
+set expandtab             " makes tab insert spaces
+set t_Co=25               " enable 256 colors
+set updatetime=300        " faster completion
+set timeoutlen=500        " by default timeoutlen is 1000 ms
+set undofile              " persistent undo even after closing
+set clipboard=unnamedplus " make y copy to system clipboard (midclick)
                           " set clipboard=unammedplus for ctrl+v
+" leader key
+let mapleader = ","
+
+" allow gf to open nonexistent files
+map gf :edit <cfile><cr>
 
 " unmap arrow keys
 noremap <Up>    <Nop>
@@ -25,6 +33,12 @@ noremap <Right> <Nop>
 noremap  <F1>    <Nop>
 inoremap <F1>    <Nop>
 
-" leader key
-let mapleader = ","
+" reselect visual selection after indent
+vnoremap < <gv
+vnoremap > >gv
+
+" comment 1 or more lines
+noremap <silent> <leader>cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+noremap <silent> <leader>cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+
 
