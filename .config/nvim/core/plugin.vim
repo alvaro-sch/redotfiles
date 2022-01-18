@@ -11,6 +11,9 @@ Plug 'kien/ctrlp.vim'
 " better status-bar themes
 Plug 'vim-airline/vim-airline'
 
+" directory tree
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
+
 call plug#end()
 
 " config

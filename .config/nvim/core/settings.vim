@@ -10,15 +10,21 @@ set smartindent
 set number relativenumber
 set list
 set listchars=tab:‣\ ,trail:·
-set expandtab             " makes tab insert spaces
-set t_Co=25               " enable 256 colors
-set updatetime=300        " faster completion
-set timeoutlen=500        " by default timeoutlen is 1000 ms
-set undofile              " persistent undo even after closing
-set clipboard=unnamedplus " make y copy to system clipboard (midclick)
-                          " set clipboard=unammedplus for ctrl+v
+set smarttab                    " delete white spaces from tab if line is empty
+set expandtab                   " makes tab insert spaces
+set t_Co=25                     " enable 256 colors
+set updatetime=300              " faster completion
+set timeoutlen=500              " by default timeoutlen is 1000 ms
+set undofile                    " persistent undo even after closing
+set clipboard=unnamedplus       " make y copy to system clipboard (midclick)
+                                " set clipboard=unammedplus for ctrl+v
+
 " leader key
 let mapleader = ","
+
+" some useful abbreviations to common mistyped commands
+" don't hate me for making mistakes
+cab W w | cab Q q | cab Wq wq | cab wQ wq | cab WQ wq | cab X x
 
 " allow gf to open nonexistent files
 map gf :edit <cfile><cr>

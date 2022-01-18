@@ -1,19 +1,17 @@
 " makefiles only support tab indentation
-au! BufNewFile Makefile,makefile set noexpandtab
-au! BufRead Makefile,makefile set noexpandtab
-
-" auto source when writing to init.vm alternatively you can run :source $MYVIM
-au! BufWritePost $MYVIMRC source %
+au! FileType Makefile,makefile set noexpandtab
 
 " commenting blocks of code
 augroup commenting_blocks_of_code
-    autocmd!
-    autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
-    autocmd FileType sh,ruby,python   let b:comment_leader = '# '
-    autocmd FileType conf,fstab       let b:comment_leader = '# '
-    autocmd FileType tex              let b:comment_leader = '% '
-    autocmd FileType mail             let b:comment_leader = '> '
-    autocmd FileType vim              let b:comment_leader = '" '
+    au!
+    au FileType c,cpp,rust,java,scala let b:comment_leader = '// '
+    au FileType sh,ruby,python        let b:comment_leader = '# '
+    au FileType conf,fstab            let b:comment_leader = '# '
+    au FileType haskell,ada           let b:comment_leader = '-- '
+    au FileType tex                   let b:comment_leader = '% '
+    au FileType mail                  let b:comment_leader = '> '
+    au FileType vim                   let b:comment_leader = '" '
+    au FileType lisp                  let b:comment_leader = ';; '
 augroup end
 
 " see help completion for source,
