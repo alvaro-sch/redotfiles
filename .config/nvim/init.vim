@@ -2,7 +2,6 @@ let g:config_files = [
     \ 'settings.vim',
     \ 'au.vim',
     \ 'plugin.vim',
-    \ 'molokai.vim',
     \ ]
 
 for s:fname in g:config_files

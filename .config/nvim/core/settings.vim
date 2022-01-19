@@ -19,6 +19,8 @@ set undofile                    " persistent undo even after closing
 set clipboard=unnamedplus       " make y copy to system clipboard (midclick)
                                 " set clipboard=unammedplus for ctrl+v
 
+set signcolumn=number
+
 " leader key
 let mapleader = ","
 
@@ -43,8 +45,16 @@ inoremap <F1>    <Nop>
 vnoremap < <gv
 vnoremap > >gv
 
+" close {[('"
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+"
 " comment 1 or more lines
 noremap <silent> <leader>cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 noremap <silent> <leader>cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
+hi Pmenu ctermbg=black ctermfg=white
 

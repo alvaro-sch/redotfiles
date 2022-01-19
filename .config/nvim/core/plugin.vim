@@ -2,8 +2,7 @@
 call plug#begin(stdpath('data') . '/plugin')
 
 " completions
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " <c-p> fzf
 Plug 'kien/ctrlp.vim'
@@ -11,16 +10,7 @@ Plug 'kien/ctrlp.vim'
 " better status-bar themes
 Plug 'vim-airline/vim-airline'
 
-" directory tree
-Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
-
 call plug#end()
-
-" config
-let g:coq_settings = {
-    \ 'auto_start': 'shut-up',
-    \ 'display.pum.fast_close': v:false,
-    \ }
 
 let g:airline_powerline_fonts = 1
 let g:airline_section_z = '%-0l:%-0c | %-p%%'
